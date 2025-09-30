@@ -65,29 +65,26 @@ group.scale.y=2;
 group.rotation.y=0.2;
 scene.add(group);
 
-const cube1 = new THREE.Mesh(
-    new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshBasicMaterial({color:0x00ff00})
+const ballGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+const ballMaterial = new THREE.MeshStandardMaterial({ color: 0xffa500 });
+const ball = new THREE.Mesh(ballGeometry, ballMaterial);
+ball.position.set(-2, 0, 0);
+scene.add(ball);
 
-)
-cube1.position.x=-1.5;
-group.add(cube1);
+// Square (Cube)
+const squareGeometry = new THREE.BoxGeometry(1, 1, 1);
+const squareMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+const square = new THREE.Mesh(squareGeometry, squareMaterial);
+square.position.set(0, 0, 0);
+scene.add(square);
 
-const cube2 = new THREE.Mesh(
-    new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshBasicMaterial({color:0x00ff00})
+// Pyramid (Cone)
+const pyramidGeometry = new THREE.ConeGeometry(0.7, 1.2, 4);
+const pyramidMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff });
+const pyramid = new THREE.Mesh(pyramidGeometry, pyramidMaterial);
+pyramid.position.set(2, 0, 0);
+scene.add(pyramid);
 
-)
-cube2.position.x=0;
-group.add(cube2);
-
-const cube3 = new THREE.Mesh(
-    new THREE.BoxGeometry(1,1,1),
-    new THREE.MeshBasicMaterial({color:0x00ff00})
-
-)
-cube3.position.x=2;
-group.add(cube3);
 
 function animate(){
     requestAnimationFrame(animate);
