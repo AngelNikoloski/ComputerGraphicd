@@ -50,6 +50,7 @@ scene.add(spotLight.target);
 const spotLightHelper = new THREE.SpotLightHelper(spotLight);
 scene.add(spotLightHelper);
 
+
 scene.background = new THREE.Color(0x202020);
 
 const camera = new THREE.PerspectiveCamera(
